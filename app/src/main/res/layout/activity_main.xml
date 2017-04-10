@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:text="졸때"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="72dp" />
+        tools:layout_editor_absoluteY="266dp" />
 
     <Button
         android:id="@+id/button4"
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:text="장난칠때"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="72dp" />
+        tools:layout_editor_absoluteY="368dp" />
 
     <Button
         android:id="@+id/button5"
@@ -59,8 +59,7 @@
         android:layout_height="wrap_content"
         android:text="놀때"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="72dp" />
-
+        tools:layout_editor_absoluteY="433dp" />
 
 
 </android.support.constraint.ConstraintLayout>
