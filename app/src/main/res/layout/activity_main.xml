@@ -9,17 +9,17 @@
         android:layout_height="match_parent"
         tools:context="kr.hs.emirim.xqnstk.friendsimulator.kimseoyoon.MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="368dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="김서윤 시뮬레이터"
-        android:textSize="40sp"
-        tools:layout_editor_absoluteY="31dp"
-        tools:layout_editor_absoluteX="37dp" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="368dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="김서윤 시뮬레이터"
+            android:or_absoluteY="31dp"
+            toolyout_edittextSize="40sp"
+            tools:las:layout_editor_absoluteX="37dp" />
 
-    <Button
+        <Button
         android:id="@+id/button1"
         android:layout_width="368dp"
         android:layout_height="wrap_content"
@@ -70,7 +70,7 @@
         android:layout_height="200dp"
         android:layout_gravity="center"
         android:src="@drawable/fri1"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="87dp" />
+        tools:layout_editor_absoluteX="87dp"
+        tools:layout_editor_absoluteY="0dp" />
 
 </LinearLayout>
