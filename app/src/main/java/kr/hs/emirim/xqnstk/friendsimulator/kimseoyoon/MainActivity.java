@@ -1,8 +1,8 @@
 package kr.hs.emirim.xqnstk.friendsimulator.kimseoyoon;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -24,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
         mMediaPlayer = MediaPlayer.create(this, R.raw.음성녹음00003);
         mMediaPlayer.setLooping(false);
         mMediaPlayer.start();
-        mVib = (Vibrator) getSystemService(VIBRATOR_SERVICE);
-        mVib = Vibrate(500);
+        //mVib = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+       // mVib = Vibrate(500);
     }
 
     @Override
@@ -46,10 +46,12 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()){
             case R.id.button1:
                 Log.d(TAG,"버튼 1 클릭");
-                mImageViewFriendVisual.setImageResource(R.drawable.fri1);
-                Toast.makeText(this, "오늘 밥 뭐 나와", Toast.LENGTH_SHORT).show();
-                mMediaPlayer = MediaPlayer.create(this, R.raw.음성녹음00003);
-                mMediaPlayer.start();
+                Intent intent = new Intent(this, ResponceActivity.class);
+                startActivity(intent);
+//                mImageViewFriendVisual.setImageResource(R.drawable.fri1);
+//                Toast.makeText(this, "오늘 밥 뭐 나와", Toast.LENGTH_SHORT).show();
+//                mMediaPlayer = MediaPlayer.create(this, R.raw.음성녹음00003);
+//                mMediaPlayer.start();
                 break;
             case R.id.button2:
                 Log.d(TAG,"버튼 2 클릭");
