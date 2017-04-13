@@ -1,6 +1,8 @@
 package kr.hs.emirim.xqnstk.friendsimulator.kimseoyoon;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -10,6 +12,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     public final static String TAG="김서윤:Main";
     private ImageView mImageViewFriendVisual;
+    private MediaPlayer mMediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,17 +21,35 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mImageViewFriendVisual=(ImageView)findViewById(R.id.freind_visual);
         Log.d(TAG,"activity_main 레이아웃 세팅-");
-
+        mMediaPlayer = MediaPlayer.create(this, R.raw.음성녹음00003);
+        mMediaPlayer.setLooping(false);
+        mMediaPlayer.start();
+        mVib = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+        mVib = Vibrate(500);
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mMediaPlayer.pause();
+        mMediaPlayer.stop();
+    }
+
     void onClick(View view){
         Log.d(TAG,"onClick 메소드 호출-");
         Log.d(TAG,"클릭된 뷰 id :"+view.getId());
+
+        if(mMediaPlayer.isPlaying()) {
+            mMediaPlayer.pause();
+        }
 
         switch (view.getId()){
             case R.id.button1:
                 Log.d(TAG,"버튼 1 클릭");
                 mImageViewFriendVisual.setImageResource(R.drawable.fri1);
-                Toast.makeText(this, "잠시만 이 쪽으로 와주시겠습니까", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "오늘 밥 뭐 나와", Toast.LENGTH_SHORT).show();
+                mMediaPlayer = MediaPlayer.create(this, R.raw.음성녹음00003);
+                mMediaPlayer.start();
                 break;
             case R.id.button2:
                 Log.d(TAG,"버튼 2 클릭");
